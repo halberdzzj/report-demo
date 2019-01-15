@@ -88,14 +88,16 @@ export class NewReportPage {
       user_id: this.user.id,
       img_name: imgName
     }
-     this.svc.showLoading('Please wait...');
+    this.svc.showLoading('Please wait...');
     this.api.addReport(report).subscribe(data => {
       // if (data == 'success') {
       this.uploadImgName = data as string;
       if (this.attachFile) {
         this.uploadImg();
+      } else {
+        this.svc.hiderLoading();
+        this.viewCtrl.dismiss();
       }
-      this.viewCtrl.dismiss();
       // }
     }, err => {
       console.log(err);
@@ -104,7 +106,7 @@ export class NewReportPage {
 
   uploadImgName: string;
   uploadImg() {
-     this.svc.showLoading('Please wait...');
+    this.svc.showLoading('Please wait...');
     const imgs = storage().ref(this.uploadImgName);
     imgs.put(this.attachFile).then((snapshoot) => {
       // console.log(snapshoot)
