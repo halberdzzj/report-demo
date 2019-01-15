@@ -220,7 +220,10 @@ var NewReportPage = /** @class */ (function () {
             if (_this.attachFile) {
                 _this.uploadImg();
             }
-            _this.viewCtrl.dismiss();
+            else {
+                _this.svc.hiderLoading();
+                _this.viewCtrl.dismiss();
+            }
             // }
         }, function (err) {
             console.log(err);
