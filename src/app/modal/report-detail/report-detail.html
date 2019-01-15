@@ -1,0 +1,36 @@
+<ion-content padding>
+  <header>
+    <h2>{{reportDetail.title}}</h2>
+  </header>
+  <!-- <ion-row>
+    <ion-col>
+      Location: {{reportDetail.location}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      Date & Time: {{reportDetail.report_time}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+  </ion-row>
+  <ion-row>
+
+  </ion-row> -->
+  <ion-row margin-top>
+    <ion-col col-3>Location: </ion-col>
+    <ion-col>{{reportDetail.location}}</ion-col>
+  </ion-row>
+  <ion-row margin-top>
+    <ion-col col-3>Timestamp:</ion-col>
+    <ion-col>{{reportDetail.report_time}}</ion-col>
+  </ion-row>
+  <ion-row margin-top>
+    <ion-col col-3>Description:</ion-col>
+    <ion-col>{{reportDetail.description}}</ion-col>
+  </ion-row>
+  <ion-row margin-top *ngIf="imgUrl">
+    <ion-col col-3>Photo</ion-col>
+    <ion-col><img [src]="imgUrl" width="70%"></ion-col>
+  </ion-row>
+</ion-content>

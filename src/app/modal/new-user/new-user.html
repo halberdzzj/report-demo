@@ -1,0 +1,39 @@
+<ion-content>
+  <header>
+    <h1 padding>New User</h1>
+  </header>
+  <hr>
+  <form text-center [formGroup]="newUserForm" (ngSubmit)="addUser()">
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>First name:</ion-label>
+          <ion-input formControlName="firstName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>Last name:</ion-label>
+          <ion-input formControlName="lastName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>Username:</ion-label>
+          <ion-input formControlName="userName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>email:</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row> -->
+    <!-- <ion-col text-center col-12> -->
+    <button type="submit" class="submitBtn" [disabled]="!newUserForm.valid" ion-button>Submit</button>
+    <!-- </ion-col> -->
+    <!-- </ion-row> -->
+  </form>
+</ion-content>

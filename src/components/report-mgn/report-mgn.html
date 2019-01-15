@@ -1,0 +1,28 @@
+<header>
+  <ion-row><span style="font-size: 1.5em">Report List</span><button ion-button clear (click)="loadReports()"><ion-icon name="refresh"></ion-icon></button><button style="margin-left: 10%" *ngIf="loginuser.role=='user'"
+      ion-button (click)="createReport()">Report fault</button></ion-row>
+</header>
+<ion-list>
+  <ion-card *ngFor="let re of reports" (click)="toReportDetail(re)" padding style="width: 90%; margin:2% auto">
+    <ion-card-title style="font-size: 1.2em;">
+      {{re.title}}
+    </ion-card-title>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="time"></ion-icon>
+          {{re.report_time}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="ios-navigate-outline"></ion-icon>
+          {{re.location}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-item class="report-item">
+
+  </ion-item> -->
+</ion-list>

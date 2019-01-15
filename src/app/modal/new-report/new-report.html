@@ -1,0 +1,49 @@
+<ion-content>
+  <header>
+    <h1 padding>New Report</h1>
+  </header>
+  <hr>
+  <form text-center [formGroup]="newReportForm" (ngSubmit)="submitNewReport()">
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>Title:</ion-label>
+          <ion-input formControlName="title"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>Location:</ion-label>
+          <ion-input formControlName="location"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label floating>Description:</ion-label>
+          <ion-input formControlName="description"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-10>
+        <ion-item>
+          <ion-label>
+            Upload Image:
+          </ion-label>
+          <ion-input [(ngModel)]="fileName" [ngModelOptions]="{standalone:true}" disabled></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col text-right>
+      <button ion-button item-end type="button" (click)="inputFile.click()" pading-left padding-right>
+        <ion-icon name="attach"></ion-icon>
+      </button>
+      <input type="file" #inputFile (change)="onAttachFileChange($event)" style="display: none" />
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row> -->
+      <!-- <ion-col text-center col-12> -->
+        <button type="submit" class="submitBtn" ion-button [disabled]="!newReportForm.valid">Submit</button>
+      <!-- </ion-col> -->
+    <!-- </ion-row> -->
+  </form>
+
+  <!-- <button ion-button full (click)="uploadImg()">TEST</button> -->
+</ion-content>

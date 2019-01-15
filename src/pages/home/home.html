@@ -1,14 +1,31 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content>
+  <header>
+    <!-- <h1 class="title" padding>
+      Fault Report
+    </h1> -->
+    <ion-item text-right>
+      <ion-label>
+        {{displayName}}
+      </ion-label>
+      <button ion-button item-end clear (click)="logout()">Logout</button>
+    </ion-item>
+  </header>
+  <nav>
+    <ion-row>
+      <ion-col col-lg-3 col-md-3 col-6>
+        <span class="nav" (click)="toReportMgn()">
+          Report Management</span>
+      </ion-col>
+      <ion-col col-lg-2 col-md-3 col-6>
+        <span class="nav" *ngIf="isAdmin" (click)="toUserMgn()">
+          User Management</span>
+      </ion-col>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    </ion-row>
+  </nav>
+  <div class="clear"></div>
+  <div id="display-area">
+    <user-mgn *ngIf="module=='userMgn'" [loginuser]="loginUser"></user-mgn>
+    <report-mgn *ngIf="module=='reportMgn'" [loginuser]="loginUser"></report-mgn>
+  </div>
 </ion-content>

@@ -1,0 +1,13 @@
+<header>
+
+  <ion-row><span style="font-size: 1.5em">User List </span><button ion-button (click)="newUser()" clear>+ New
+      user</button></ion-row>
+</header>
+<ion-list>
+  <ion-item *ngFor="let u of users">
+    <ion-label>
+      {{u.username}}
+    </ion-label>
+    <button item-end ion-button (click)="removeUser(u)">Remove</button>
+  </ion-item>
+</ion-list>

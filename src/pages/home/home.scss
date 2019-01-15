@@ -1,3 +1,28 @@
 page-home {
+    
+        font-size: 100%;
+    
+    ul{
+        // display: block;
+    }
 
+    span{
+        padding: 10px;
+    }
+
+    span:hover{
+        cursor: pointer;
+        // color: chocolate;
+        // background-color: deepskyblue;
+    }
+    nav{
+        padding: 5px;
+        background-color: #488aff;
+        // border: 1px solid black;
+    }
+
+    #display-area{
+        width: 80%;
+        margin: 50px auto;
+    }
 }
